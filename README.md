@@ -13,6 +13,7 @@ codex-skills/
 |   |-- skill-creator/
 |   |-- skill-installer/
 |-- docx/
+|-- design-md/
 |-- frontend-design/
 |-- khazix-writer/
 |-- pdf/
@@ -32,6 +33,7 @@ codex-skills/
 | system | [skill-creator](./.system/skill-creator) | `.system/skill-creator` | `$skill-creator` | auto-match | Guide for creating effective skills. This skill should be used when users want to create a... |
 | system | [skill-installer](./.system/skill-installer) | `.system/skill-installer` | `$skill-installer` | auto-match | Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Us... |
 | regular | [docx](./docx) | `docx` | `$docx` | auto-match | Use this skill whenever the user wants to create, read, edit, or manipulate Word documents... |
+| regular | [design-md](./design-md) | `design-md` | `$design-md` | auto-match | Use when the user wants a page or interface to follow a known brand aesthetic, mentions DE... |
 | regular | [frontend-design](./frontend-design) | `frontend-design` | `$frontend-design` | auto-match | Create distinctive, production-grade frontend interfaces with high design quality. Use thi... |
 | regular | [khazix-writer](./khazix-writer) | `khazix-writer` | `$khazix-writer` | auto-match | 数字生命卡兹克（Khazix）的公众号长文写作skill。当用户需要撰写公众号文章、写稿子、续写文章、根据素材产出长文时使用。触发词包括但不限于：写文章、写稿子、帮我写、续写、扩写... |
 | regular | [pdf](./pdf) | `pdf` | `$pdf` | auto-match | Use this skill whenever the user wants to do anything with PDF files. This includes readin... |
@@ -93,6 +95,14 @@ codex-skills/
 - Description: Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.
 - Key contents: `SKILL.md`, `LICENSE.txt`, `scripts/`
 
+#### [design-md](./design-md)
+
+- Category: regular
+- Repository path: `design-md`
+- Trigger modes: Direct: `$design-md`; Auto-match: matches requests described in SKILL.md
+- Description: Use when the user wants a page or interface to follow a known brand aesthetic, mentions DESIGN.md, asks for a specific visual vibe, or needs help choosing a template from the local awesome-design-md library before building UI.
+- Key contents: `SKILL.md`, `scripts/`, `references/`
+
 #### [frontend-design](./frontend-design)
 
 - Category: regular
@@ -146,9 +156,9 @@ codex-skills/
 | Item | Count |
 | --- | ---: |
 | System skills | 5 |
-| Regular skills | 7 |
+| Regular skills | 8 |
 | Skills with standalone prompt commands | 1 |
-| Total | 12 |
+| Total | 13 |
 
 ---
 
