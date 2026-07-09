@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.skills/script-broll-video-maker/output_schema.json",
+  "title": "Script B-roll Video Maker Output",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["completed", "failed", "partial"]
+    },
+    "project_id": { "type": "string" },
+    "project_root": { "type": "string" },
+    "final_video_path": { "type": ["string", "null"] },
+    "final_burned_video_path": { "type": ["string", "null"] },
+    "srt_path": { "type": ["string", "null"] },
+    "audio_path": { "type": ["string", "null"] },
+    "asr_transcript_path": { "type": ["string", "null"] },
+    "timeline_path": { "type": ["string", "null"] },
+    "preview_contact_sheet_path": { "type": ["string", "null"] },
+    "asset_license_report_path": { "type": ["string", "null"] },
+    "production_report_path": { "type": ["string", "null"] },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "segment_id": { "type": "string" },
+          "text": { "type": "string" },
+          "start_seconds": { "type": "number" },
+          "end_seconds": { "type": "number" },
+          "is_key_segment": { "type": "boolean" },
+          "visual_query": { "type": "string" },
+          "asr_start_seconds": { "type": ["number", "null"] },
+          "asr_end_seconds": { "type": ["number", "null"] }
+        }
+      }
+    },
+    "used_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "segment_id": { "type": "string" },
+          "source_type": {
+            "type": "string",
+            "enum": ["reference_video", "free-resource", "placeholder", "manual", "unknown"]
+          },
+          "asset_path": { "type": "string" },
+          "selection_policy": { "type": ["string", "null"] },
+          "license_record_path": { "type": ["string", "null"] },
+          "risk_level": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "unknown"]
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "risk_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "error": { "type": ["string", "null"] },
+    "phase": { "type": ["string", "null"] },
+    "logs": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

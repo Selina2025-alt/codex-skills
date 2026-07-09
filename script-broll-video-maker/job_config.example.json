@@ -1,0 +1,48 @@
+{
+  "project_id": "demo-script-broll-v030",
+  "document_path": "samples/article.txt",
+  "script_text": "",
+  "audio_path": "",
+  "transcript_path": "",
+  "target_platforms": ["bilibili", "douyin"],
+  "output_aspect_ratios": ["16:9"],
+  "voice_config": {
+    "provider": "local-sapi",
+    "voice": "",
+    "format": "wav"
+  },
+  "asr_config": {
+    "provider": "none",
+    "command": "",
+    "language": "zh",
+    "transcript_path": ""
+  },
+  "source_policy": {
+    "reference_video_paths": ["samples/reference.mp4"],
+    "reference_urls": [],
+    "reference_search_query": "AI enterprise workflow business technology b-roll",
+    "reference_search_limit": 1,
+    "auto_reference_search": false,
+    "free_resource_skill_root": "C:\\path\\to\\free-resource",
+    "free_resource_command": "C:\\path\\to\\free-resource",
+    "free_resource_root": "",
+    "free_resource_config_path": "C:\\path\\to\\free-resource\\config.json",
+    "required_for_key_segments": false,
+    "key_segment_keywords": ["AI", "enterprise", "workflow", "compliance", "procurement"],
+    "key_segment_ids": [],
+    "auto_key_segment_count": 4,
+    "cookies_path": ""
+  },
+  "cookies_path": "",
+  "output_dir": "projects",
+  "max_segment_chars": 100,
+  "scene": {
+    "threshold": 0.35,
+    "min_duration_seconds": 5,
+    "preferred_max_duration_seconds": 8,
+    "max_duration_seconds": 15
+  },
+  "render": {
+    "burn_subtitles": true
+  }
+}

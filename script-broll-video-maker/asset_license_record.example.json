@@ -1,0 +1,28 @@
+{
+  "asset_id": "seg_009_pexels_123456",
+  "segment_id": "seg_009",
+  "source_type": "free-resource",
+  "provider": "pexels",
+  "provider_asset_id": "123456",
+  "source_url": "https://www.pexels.com/video/example-123456/",
+  "download_url": "https://videos.pexels.com/video-files/example.mp4",
+  "local_path": "projects/demo/assets/free-resource/seg_009/example.mp4",
+  "license": {
+    "label": "Pexels License",
+    "commercial_use": "allowed by provider terms at download time",
+    "attribution_required": false,
+    "license_url": "https://www.pexels.com/license/"
+  },
+  "downloaded_at": "2026-06-22T15:30:00+08:00",
+  "used_clip": {
+    "output_segment_id": "seg_009",
+    "start_seconds": 0.0,
+    "end_seconds": 21.4,
+    "transform": "loop/crop/scale/no-audio"
+  },
+  "risk_level": "low",
+  "risk_notes": [
+    "Store provider page URL and download time.",
+    "Re-check provider license before high-volume commercial publishing."
+  ]
+}

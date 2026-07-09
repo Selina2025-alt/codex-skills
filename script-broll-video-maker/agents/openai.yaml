@@ -1,0 +1,7 @@
+interface:
+  display_name: "Script B-roll Video Maker"
+  short_description: "Generate narrated B-roll videos from documents, scripts, or audio."
+  default_prompt: "Use $script-broll-video-maker to turn this document, script, or narration audio into a mixed-footage video with aligned subtitles."
+
+policy:
+  allow_implicit_invocation: true

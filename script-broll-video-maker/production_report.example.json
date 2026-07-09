@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "skill": "script-broll-video-maker",
+  "version": "v0.3.0",
+  "validated_status": "MVP Validated / Limited Production Handoff",
+  "project_id": "demo-script-broll-v030",
+  "created_at": "2026-06-30T10:00:00+08:00",
+  "source": {
+    "source_mode": "document",
+    "document_path": "samples/article.txt",
+    "audio_path": null,
+    "transcript_path": null,
+    "source_hash": "example-source-sha256",
+    "text_policy": "exact narration, no rewrite"
+  },
+  "outputs": {
+    "final_video_path": "projects/demo-script-broll-v030/render/final.mp4",
+    "final_burned_video_path": "projects/demo-script-broll-v030/render/final_burned.mp4",
+    "srt_path": "projects/demo-script-broll-v030/subtitles/final.srt",
+    "audio_path": "projects/demo-script-broll-v030/audio/narration.wav",
+    "timeline_path": "projects/demo-script-broll-v030/timeline/timeline.json",
+    "asset_plan_path": "projects/demo-script-broll-v030/timeline/asset_plan.json",
+    "verification_path": "projects/demo-script-broll-v030/render/verification.json",
+    "agent_response_path": "projects/demo-script-broll-v030/render/agent-response.json"
+  },
+  "metrics": {
+    "duration_seconds": 120.0,
+    "segment_count": 24,
+    "subtitle_cue_count": 80,
+    "reference_video_segments": 18,
+    "free_resource_segments": 6,
+    "reference_clip_duration_policy": "5-8 seconds preferred, 15 seconds hard cap",
+    "reference_clip_order": "deterministic-shuffled-before-selection",
+    "placeholder_count": 0,
+    "motion_check_still_candidates": 0
+  },
+  "validation": {
+    "verification_status": "passed",
+    "failed_count": 0,
+    "subtitle_single_line": true,
+    "subtitle_max_20_chars": true,
+    "final_has_video_audio_subtitle": true,
+    "youtube_preflight_passed": true
+  },
+  "risk_notes": [
+    "Reference videos must be treated as high-risk unless explicit rights exist.",
+    "free-resource assets require per-asset license records before commercial release.",
+    "YouTube cookies are optional and may fail; use local reference video for deterministic testing."
+  ]
+}

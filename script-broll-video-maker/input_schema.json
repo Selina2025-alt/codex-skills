@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.skills/script-broll-video-maker/input_schema.json",
+  "title": "Script B-roll Video Maker Input",
+  "type": "object",
+  "additionalProperties": true,
+  "oneOf": [
+    { "required": ["document_path"] },
+    { "required": ["script_text"] },
+    { "required": ["audio_path"] }
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "description": "Stable job id. If omitted, the runner may derive one from the document name."
+    },
+    "document_path": {
+      "type": "string",
+      "description": "Path to .txt, .md, .docx, or .pdf source document. Relative paths resolve from Workspace."
+    },
+    "script_text": {
+      "type": "string",
+      "description": "Inline confirmed script text. The entrypoint writes it to a temporary UTF-8 document before running."
+    },
+    "audio_path": {
+      "type": "string",
+      "description": "Path to uploaded narration audio. Requires ASR unless transcript_path is provided."
+    },
+    "transcript_path": {
+      "type": "string",
+      "description": "Optional pre-existing ASR transcript JSON with text and timed segments."
+    },
+    "target_platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["douyin", "kuaishou", "xiaohongshu", "bilibili", "video_account", "youtube", "x", "other"]
+      },
+      "default": ["bilibili"]
+    },
+    "output_aspect_ratios": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["16:9", "9:16", "1:1"]
+      },
+      "default": ["16:9"]
+    },
+    "voice_config": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": ["local-sapi", "command"],
+          "default": "local-sapi"
+        },
+        "voice": {
+          "type": "string",
+          "default": ""
+        },
+        "command": {
+          "type": "string",
+          "description": "Command/script path required when provider is command."
+        },
+        "format": {
+          "type": "string",
+          "enum": ["wav"],
+          "default": "wav"
+        }
+      }
+    },
+    "asr_config": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": ["none", "faster-whisper", "command", "mock"],
+          "default": "none",
+          "description": "ASR provider for audio_path. none defaults to faster-whisper in the runner."
+        },
+        "command": {
+          "type": "string",
+          "description": "ASR command/script path required when provider is command."
+        },
+        "language": {
+          "type": "string",
+          "description": "Optional language hint such as zh, en, or ja."
+        },
+        "transcript_path": {
+          "type": "string",
+          "description": "Optional pre-existing transcript JSON. Overrides live ASR when provided."
+        }
+      }
+    },
+    "source_policy": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "reference_urls": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "reference_video_paths": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "reference_search_query": {
+          "type": "string",
+          "description": "yt-dlp ytsearch query. Optional and fragile; local references are preferred for deterministic tests."
+        },
+        "reference_search_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "default": 1
+        },
+        "auto_reference_search": {
+          "type": "boolean",
+          "default": false
+        },
+        "free_resource_skill_root": {
+          "type": "string",
+          "description": "Path to configured free-resource skill root."
+        },
+        "free_resource_command": {
+          "type": "string",
+          "description": "Adapter command or skill folder used to download authorized stock footage."
+        },
+        "free_resource_root": {
+          "type": "string",
+          "description": "Folder containing pre-downloaded assets organized by segment id."
+        },
+        "free_resource_config_path": {
+          "type": "string"
+        },
+        "required_for_key_segments": {
+          "type": "boolean",
+          "default": false
+        },
+        "key_segment_keywords": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "key_segment_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "auto_key_segment_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12,
+          "default": 3
+        },
+        "cookies_path": {
+          "type": "string",
+          "description": "Optional cookies.txt path for yt-dlp."
+        }
+      }
+    },
+    "cookies_path": {
+      "type": "string",
+      "description": "Optional top-level cookies.txt path for yt-dlp."
+    },
+    "output_dir": {
+      "type": "string",
+      "default": "projects",
+      "description": "Project output root. Relative paths resolve from Workspace."
+    },
+    "max_segment_chars": {
+      "type": "integer",
+      "minimum": 40,
+      "maximum": 500,
+      "default": 240
+    },
+    "scene": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "threshold": { "type": "number", "default": 0.35 },
+        "min_duration_seconds": {
+          "type": "number",
+          "default": 5,
+          "description": "Preferred lower bound for reference/B-roll cuts."
+        },
+        "preferred_max_duration_seconds": {
+          "type": "number",
+          "default": 8,
+          "description": "Preferred upper bound for ordinary cuts; long natural scenes may be retained up to max_duration_seconds."
+        },
+        "max_duration_seconds": {
+          "type": "number",
+          "default": 15,
+          "maximum": 15,
+          "description": "Hard cap for any reference/B-roll cut."
+        }
+      }
+    },
+    "render": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "burn_subtitles": { "type": "boolean", "default": true }
+      }
+    }
+  }
+}
