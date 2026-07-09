@@ -1,0 +1,4 @@
+interface:
+  display_name: "Article Audio Video Maker"
+  short_description: "Article or audio to 16:9 video"
+  default_prompt: "Generate a complete 16:9 illustrated video from the article or audio in this folder, using the provided style rules and reference assets."

@@ -1,0 +1,68 @@
+{
+  "project_name": "article_audio_video_job",
+  "mode": "auto",
+  "article_path": null,
+  "audio_path": null,
+  "style_asset_mode": "job_folder_or_bundled_default",
+  "style_rules_path": "画风锁定与出图规则.md",
+  "reference_assets_dir": "参考素材",
+  "bundled_style_rules_path": "assets/default-style/画风锁定与出图规则.md",
+  "bundled_reference_assets_dir": "assets/default-style/reference-assets",
+  "output_dir": "outputs/article_audio_video",
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "aspect_ratio": "16:9",
+    "filename": "final_16x9.mp4"
+  },
+  "segmentation": {
+    "fixed_segment_count": null,
+    "use_article_logic": true,
+    "one_image_per_segment": true,
+    "audio_per_segment": false
+  },
+  "audio": {
+    "master_audio_mode": "single_continuous_track",
+    "tts_backend": "auto",
+    "tts_fallback": "windows_sapi",
+    "voice_mode": "fixed_voice_id_or_reference_audio",
+    "reference_audio_path": null,
+    "voice_id": null,
+    "speed": "medium",
+    "pause_comma_ms": 300,
+    "pause_period_ms": 700,
+    "pause_paragraph_ms": 1000,
+    "peak_db": -1.0,
+    "loudness_normalization": true
+  },
+  "transcription": {
+    "backend": "auto",
+    "enable_domain_correction": true,
+    "glossary_path": null,
+    "keep_raw_transcript": true,
+    "keep_corrected_transcript": true
+  },
+  "subtitles": {
+    "sentence_level": true,
+    "single_line": true,
+    "max_chinese_chars": 20,
+    "preferred_chinese_chars_min": 10,
+    "preferred_chinese_chars_max": 18,
+    "position": "bottom_safe_area",
+    "style": "white text with black stroke or soft shadow"
+  },
+  "images": {
+    "one_image_per_segment": true,
+    "prompt_language": "en",
+    "strict_style_lock": true,
+    "avoid_text_edge_clipping": true,
+    "avoid_arrow_text_overlap": true
+  },
+  "qa": {
+    "extract_review_frames": true,
+    "verify_no_subtitle_overlap": true,
+    "verify_video_audio_duration_match": true,
+    "write_production_report": true
+  }
+}
