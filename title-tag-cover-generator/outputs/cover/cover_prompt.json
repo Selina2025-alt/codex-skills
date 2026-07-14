@@ -1,0 +1,24 @@
+{
+  "canvas": {
+    "width": 1086,
+    "height": 1448,
+    "ratio": "3:4"
+  },
+  "template": "C:/Users/新项目/标题-标签-封面生成/封面参考模版/1.png",
+  "title_lines": [
+    "谷歌工程师Zach Lloyd",
+    "软件工厂时代会迫使我们",
+    "重建大量基础设施"
+  ],
+  "highlight_words": [
+    "软件工厂时代",
+    "重建大量基础设施"
+  ],
+  "photo": {
+    "path": "C:/Users/新项目/标题-标签-封面生成/title-tag-cover-generator/outputs/cover/software_factory_photo_source.png",
+    "ratio": "matched_to_reference_template_frame",
+    "color": "black_and_white",
+    "contains_text": false
+  },
+  "output": "C:/Users/新项目/标题-标签-封面生成/title-tag-cover-generator/outputs/cover/cover_image.png"
+}

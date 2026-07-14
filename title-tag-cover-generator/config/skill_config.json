@@ -1,0 +1,19 @@
+{
+  "stage1_required_outputs": [
+    "article_analysis.md",
+    "title_options.md",
+    "selected_title_recommendation.md",
+    "tag_strategy.md",
+    "selected_tags_recommendation.md",
+    "stage1_report.md"
+  ],
+  "platforms": ["xiaohongshu", "douyin_shipinhao", "wechat_article"],
+  "tag_count": {
+    "min": 5,
+    "max": 8
+  },
+  "review_gates": {
+    "stage1": "Pause after title and tag recommendations. Wait for human title confirmation.",
+    "stage2": "Pause after cover generation. Wait for cover review."
+  }
+}

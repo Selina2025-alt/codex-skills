@@ -1,0 +1,3 @@
+﻿Paste or upload the article text here before running Stage 1.
+
+This file is ignored by Git so private article content is not committed by accident.

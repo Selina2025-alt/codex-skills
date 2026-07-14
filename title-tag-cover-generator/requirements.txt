@@ -1,0 +1,2 @@
+# Standard-library only for Stage 1 and Stage 2 mock mode.
+# Production image generation is supplied through config/image_api_config.example.json.

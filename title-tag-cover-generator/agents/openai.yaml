@@ -1,0 +1,6 @@
+interface:
+  display_name: "标题-标签-封面生成器"
+  short_description: "两阶段生成标题标签封面素材包"
+  default_prompt: "Use $title-tag-cover-generator to process this article: generate titles and tags first, pause for review, then continue to cover only after title confirmation."
+policy:
+  allow_implicit_invocation: true
